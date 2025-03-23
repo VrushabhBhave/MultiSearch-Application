@@ -1,0 +1,254 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrapper{
+    display: flex;
+}
+
+/* Left Side  */
+#left{
+    max-height: 100vh;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f0f4f9;
+    padding: 25px 15px;
+    font-family: "Outfit", sans-serif;
+    /* position: fixed; */
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+/* Top Part  */
+#left #top .menu{
+    display: block;
+    font-size: 1.5rem;
+    margin-left: 10px;
+    margin-bottom: 3rem;
+    cursor: pointer;
+}
+
+#left #top .chat{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #e6eaf1;
+    color: #808080;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Recent History */
+.recent{
+    display: flex;
+    flex-direction: column;
+}
+
+.recent .recent-container{
+    overflow: auto;
+    height: 300px;
+}
+
+.recent .recent-title{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.recent .recent-trash{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.recent .recent-trash .trash{
+    margin-top: 0.7rem;
+    cursor: pointer;
+}
+
+.recent .recent-prompt{
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 50px;
+    padding-right: 40px;
+    cursor: pointer;
+    color: #282828;
+    transition: all 0.3s;
+}
+
+.recent .recent-prompt .prompt-para{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+}
+
+.recent .recent-prompt:hover{
+    background-color: #e3e6eb;
+}
+
+/* Bottom Part  */
+#left #bottom{
+    display: flex;
+    flex-direction: column;
+}
+
+#bottom .bottomItems{
+    display: flex;
+    align-items: flex-center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 50px;
+    padding-right: 40px;
+    cursor: pointer;
+    color: #282828;
+    transition: all 0.3s;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+#bottom .bottomItems:hover{
+    background-color: #e3e6eb;
+}
+
+.hidden{
+    display: none;
+}
+
+/* Right Section  */
+
+/* Navbar  */
+#right{
+    min-height: 100vh;
+    position: relative;
+    flex: 1;
+    font-family: "Outfit", sans-serif;
+}
+
+#right .nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    padding: 1.3rem;
+    color: #585858;
+}
+
+#right .nav p{
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+#right .nav p:hover{
+    text-decoration: underline;
+}
+
+#right .nav img{
+    width: 2.5rem;
+    border-radius: 50%;
+}
+
+/* Right Main Content  */
+
+#right .main-content{
+    /* width: 1000px;
+    margin: auto; */
+    margin-left: 30px;
+}
+
+#right .main-content .welcome{
+    font-size: 2.8rem;
+    font-weight: 500;
+    padding: 1rem;
+    color: #c4c7c5;
+}
+
+#right .main-content span{
+    background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Right Content Cards  */
+.main-content .cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.main-content .cards .card{
+    height: 250px;
+    background-color: #f0f4f9;
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.main-content .cards .card:hover{
+    background-color: #dfe4ea;
+}
+
+.main-content .cards .card p{
+    color: #585858;
+    font-size: 0.9rem;
+}
+
+.main-content .cards .card img{
+    width: 35px;
+    padding: 5px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 20px;
+    background-color: #ffff;
+}
+
+/* Right Search Container */
+.search{
+    max-width: 1050px;
+    padding: 0px 20px;
+    /* margin: auto; */
+    margin-top: 2rem;
+}
+
+.search-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 11px 18px;
+    border-radius: 50px;
+    background-color: #f0f4f9;
+}
+
+.search-container input{
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 16px;
+}
+
+.search-container .icons{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+} 
+
+.search-container .icons img{
+    width: 24px;
+    cursor: pointer;
+}
