@@ -4,8 +4,6 @@ const menu = document.querySelector(".menu");
 let hidePara = document.querySelectorAll("#left p");
 if(localStorage.getItem("history") == null){
     menu.addEventListener("click", () => {
-        console.log("clicked");
-        
         let hideStatus = hidePara[0].classList.contains("hidden"); 
             hidePara.forEach((para) => {
                 if(hideStatus){
@@ -29,7 +27,6 @@ send.addEventListener("click", () => {
     const prompt = input.value.trim();
     history.push(prompt);
     localStorage.setItem("history", JSON.stringify(history));
-    input.value = "";
 });
 
 if(localStorage.length > 1){
@@ -66,8 +63,6 @@ function displayRecentHistory(arr){
     recentContainer.append(fragment);
 
     hidePara = document.querySelectorAll("#left p");
-    console.log(hidePara);
-    
     menu.addEventListener("click", () => {
     let hideStatus = hidePara[0].classList.contains("hidden"); 
         hidePara.forEach((para) => {
