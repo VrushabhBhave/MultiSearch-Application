@@ -112,6 +112,7 @@ googleBtn.addEventListener("click", () => {
     document.querySelector("#images").classList.remove("active");
     dataContainer.innerHTML = "";
     fetchDataOfGoogle(textInput.value);
+    cards.style.display = "none";
 })
 
 
