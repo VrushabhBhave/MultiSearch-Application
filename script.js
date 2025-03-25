@@ -23,6 +23,7 @@ const send = document.querySelector("#send");
 const input = document.querySelector("input");
 let history = localStorage.getItem("history") !== null ? JSON.parse(localStorage.getItem("history")) : [];
 const imageBtn = document.querySelector("#images");
+const wikiBtn = document.querySelector("#wikipedia");
 
 send.addEventListener("click", () => {
     const prompt = input.value.trim();
@@ -31,6 +32,12 @@ send.addEventListener("click", () => {
 });
 
 imageBtn.addEventListener("click", () => {
+    const prompt = input.value.trim();
+    history.push(prompt);
+    localStorage.setItem("history", JSON.stringify(history));
+})
+
+wikiBtn.addEventListener("click", () => {
     const prompt = input.value.trim();
     history.push(prompt);
     localStorage.setItem("history", JSON.stringify(history));

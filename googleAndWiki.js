@@ -83,6 +83,7 @@ function displayData(result) {
       websiteLink.href = data.link;
       websiteLink.setAttribute("target", "_blank");
       websiteLink.innerText = data.link;
+      websiteLink.classList.add("websiteLink");
 
       let discriptionDiv = document.createElement("div");
       discriptionDiv.classList.add("discriptionDiv");
