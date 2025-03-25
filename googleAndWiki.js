@@ -3,6 +3,7 @@ let sendBtn = document.querySelector("#send");
 let textInput = document.querySelector(".search-container input");
 let googleBtn = document.querySelector("#google");
 let loader = document.querySelector(".loader");
+let cards = document.querySelector(".cards");
 let API_KEY = "AIzaSyBr7VrahcC0LMU8n5HQRNs4dgpF0nejrxk";
 let CX_ID = "f1ab3c4e0f0534813";
 
@@ -25,14 +26,7 @@ async function fetchDataOfGoogle(query){
 
     loader.style.display = "none";
 
-    googleBtn.addEventListener("click", () => {
-        document.querySelector("#google").classList.add("active");
-        document.querySelector("#wikipedia").classList.remove("active");
-        document.querySelector("#gemini").classList.remove("active");
-        document.querySelector("#images").classList.remove("active");
-        dataContainer.innerHTML = "";
-        displayData(result.items);
-    })
+    dataContainer.style.boxShadow = "rgba(0, 0, 0, 0.24) 0px 3px 8px";
 
     console.log(result.items);
     dataContainer.innerHTML = ""
@@ -107,6 +101,16 @@ function displayData(result){
 }
 
 sendBtn.addEventListener("click", () => {
+    fetchDataOfGoogle(textInput.value);
+    cards.style.display = "none";
+})
+
+googleBtn.addEventListener("click", () => {
+    document.querySelector("#google").classList.add("active");
+    document.querySelector("#wikipedia").classList.remove("active");
+    document.querySelector("#gemini").classList.remove("active");
+    document.querySelector("#images").classList.remove("active");
+    dataContainer.innerHTML = "";
     fetchDataOfGoogle(textInput.value);
 })
 
