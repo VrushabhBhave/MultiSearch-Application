@@ -16,6 +16,12 @@
     }
 }
 
+@media screen and (max-width: 600px){
+    .imageContainer{
+        width: 45%;
+    }
+}
+
 @media screen and (max-width: 460px){
     .buttons .btn{
         padding: 8px 12px;
