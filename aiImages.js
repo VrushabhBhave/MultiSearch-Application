@@ -1,4 +1,3 @@
-const imageBtn = document.querySelector("#images");
 const API_Key = "56hJnyxfW2AzQPJ3jpj1CFqJ4dhxjW7XZ7pBj9JjYn0";
 
 async function fetchImages(search){
@@ -26,6 +25,14 @@ async function fetchImages(search){
 
 function displayFetchImages(data){
     dataContainer.innerHTML = "";
+    let heading = document.createElement("h3");
+  heading.classList.add("heading");
+  if (data.length === 0) {
+    heading.innerText =
+      "🔍 No results found for your search. Please try different keywords.";
+    dataContainer.append(heading);
+    loader.style.display = "none";
+  }else{
     const fregment = document.createDocumentFragment();
     const imgesContainer = document.createElement("div");
     imgesContainer.classList.add("imgesContainer");
@@ -57,6 +64,7 @@ function displayFetchImages(data){
     imgesContainer.append(fregment);
     dataContainer.append(imgesContainer);
     loader.style.display = "none";
+  }
 }
 
 imageBtn.addEventListener("click", () => {
