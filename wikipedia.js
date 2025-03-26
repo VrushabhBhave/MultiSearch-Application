@@ -29,7 +29,7 @@ function displayDataOfWikipedia(data){
         heading.innerText = "🔍 No results found for your search. Please try different keywords.";
         dataContainer.append(heading);
     }else{
-        heading.innerText = `Google search result for : ${textInput.value}`;
+        heading.innerText = `Wikipedia search result for : ${textInput.value}`;
         dataContainer.append(heading);
         const fregment = document.createDocumentFragment();
         data.forEach((obj) => {

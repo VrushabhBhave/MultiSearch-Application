@@ -473,6 +473,27 @@
     margin-bottom: 0.5rem;
 }
 
+/* Gemini Data  */
+.geminiDataDiv p {
+    margin-bottom: 15px;
+}
+
+.geminiDataDiv ul {
+    padding-left: 20px;
+}
+
+.geminiDataDiv li {
+    margin-bottom: 5px;
+}
+
+.geminiDataDiv pre {
+    background: gray;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
 /* Footer  */
 .footer{
     display: flex;

@@ -24,6 +24,7 @@ const input = document.querySelector("input");
 let history = localStorage.getItem("history") !== null ? JSON.parse(localStorage.getItem("history")) : [];
 const imageBtn = document.querySelector("#images");
 const wikiBtn = document.querySelector("#wikipedia");
+const geminiBtn = document.querySelector("#gemini");
 
 send.addEventListener("click", () => {
     const prompt = input.value.trim();
@@ -42,6 +43,12 @@ wikiBtn.addEventListener("click", () => {
     history.push(prompt);
     localStorage.setItem("history", JSON.stringify(history));
 })
+
+geminiBtn.addEventListener("click", () => {
+    const prompt = input.value.trim();
+    history.push(prompt);
+    localStorage.setItem("history", JSON.stringify(history));
+});
 
 if(localStorage.length > 1){
     window.addEventListener("load" , () => {

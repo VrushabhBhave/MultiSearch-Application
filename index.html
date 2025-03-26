@@ -126,9 +126,17 @@
         backDelay: 1000,
       });
     </script>
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+    </script>
     <script src="script.js"></script>
     <script src="googleAndWiki.js"></script>
     <script src="aiImages.js"></script>
     <script src="wikipedia.js"></script>
+    <script src="gemini.js" type="module"></script>
 </body>
 </html>
