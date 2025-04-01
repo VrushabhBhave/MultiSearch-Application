@@ -120,10 +120,6 @@
     background-color: #e3e6eb;
 }
 
-.hidden{
-    display: none;
-}
-
 /* Right Section  */
 
 /* Navbar  */
@@ -155,6 +151,37 @@
 #right .nav img{
     width: 2.5rem;
     border-radius: 50%;
+}
+
+#right .nav .right-content{
+    display: flex;
+    align-items: center;
+}
+
+#right .nav .right-content span{
+    margin-left: 0.5rem;
+}
+
+.sign-btn #sign-in-btn{
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    background: -webkit-linear-gradient(16deg, #12c2e9, #c471ed, #f64f59);
+    border: none;
+    color: white;
+    transition: all 0.5s ease-in-out;
+    background-size: 200px;
+}
+
+.sign-btn #sign-in-btn:hover{
+    box-shadow: 0px 0px 5px gray;
+    transform: scale(1.01);
+    background-position: 70%;
+}
+
+.sign-btn #sign-in-btn a{
+    text-decoration: none;
 }
 
 /* Right Main Content  */
@@ -338,6 +365,9 @@
 }
 
 .resultDiv{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     max-width: 850px;
     padding: 10px 10px;
     margin: auto;
