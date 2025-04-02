@@ -1,3 +1,11 @@
 .hidden{
     display: none;
 }
+
+.blue-bottom-border{
+    border-bottom: 4px solid rgb(44, 44, 237);
+}
+
+.gray-bottom-border{
+    border-bottom: 4px solid gray;
+}
