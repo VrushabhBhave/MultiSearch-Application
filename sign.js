@@ -25,17 +25,16 @@ navigationRightDiv.addEventListener("click", (e) => {
 const SignUpformElements = Array.from(document.forms[1].elements);
 console.log(SignUpformElements);
 const form = document.querySelector("#sign-up-form form");
-const dataArray = [];
+const localstorageData = localStorage.getItem("User Login Data") !== null ? JSON.parse(localStorage.getItem("User Login Data")) : [];
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     let data = {
-        name: SignUpformElements[0].value,
-        email: SignUpformElements[1].value,
-        password: SignUpformElements[2].value,
+        userName: SignUpformElements[0].value,
+        name: SignUpformElements[1].value,
+        email: SignUpformElements[2].value,
+        password: SignUpformElements[3].value,
     };
-    dataArray.push(data);
-    clearForm(SignUpformElements);
-    console.log(dataArray);
+    checkDataSameOrNot(localstorageData, data);
 })
 
 function clearForm(SignUpformElements){
@@ -44,10 +43,34 @@ function clearForm(SignUpformElements){
     });
 }
 
+function checkDataSameOrNot(localStorageData, data){
+    if(localStorageData.length > 0){
+        localStorageData.forEach((obj) => {
+            if((localStorageData.length > 0) && obj.email == data.email){
+                alert("email is already exists!");
+                return;
+            }else if(localStorageData.length > 0 && obj.userName == data.userName){
+                alert("username is already exists!");
+            }else{
+                localstorageData.push(data);
+                localStorage.setItem("User Login Data", JSON.stringify(localstorageData));
+                clearForm(SignUpformElements);
+                navigate();
+            }
+        })
+    }
+    else{ 
+        localstorageData.push(data);
+        localStorage.setItem("User Login Data", JSON.stringify(localstorageData));
+        clearForm(SignUpformElements);
+        navigate();
+    }
+}
+
 
 const singUpBtn = document.querySelector("#sign-up-btn");
 singUpBtn.addEventListener("click", () => {
-    navigate();
+
 })
 
 //nevigate form after clicking signUpBtn or nevigationLeftDiv
